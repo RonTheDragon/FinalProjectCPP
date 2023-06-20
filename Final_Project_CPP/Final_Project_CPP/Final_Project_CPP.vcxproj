@@ -127,7 +127,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Final_Project_CPP.cpp" />
+    <ClCompile Include="Dashboard.cpp" />
+    <ClCompile Include="Data.cpp" />
+    <ClCompile Include="DataBase.cpp" />
+    <ClCompile Include="mian.cpp" />
+    <ClCompile Include="ProteinReader.cpp" />
+    <ClCompile Include="Sensor.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Dashboard.h" />
+    <ClInclude Include="Data.h" />
+    <ClInclude Include="DataBase.h" />
+    <ClInclude Include="ProteinReader.h" />
+    <ClInclude Include="Sensor.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

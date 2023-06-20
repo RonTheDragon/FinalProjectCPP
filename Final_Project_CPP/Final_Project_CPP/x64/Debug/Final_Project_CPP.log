@@ -1,0 +1,2 @@
+﻿  ProteinReader.cpp
+C:\Users\שני\source\repos\FinalProjectCPP\Final_Project_CPP\Final_Project_CPP\ProteinReader.cpp(3,16): error C2533: 'ProteinReader::{ctor}': constructors not allowed a return type
