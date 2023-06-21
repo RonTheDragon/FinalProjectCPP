@@ -8,6 +8,8 @@ public:
 
 	~Data();
 
+	void  SetData(float proteinAbsorb, float intakeReq, float time, float weight, int activityLv);
+
 	void  SetProteinAbsorbed(float proteinAbsorb);
 	float GetProteinAbsorbed();
 	void  SetProteinIntakeReq(float intakeReq);

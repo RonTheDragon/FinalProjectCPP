@@ -8,7 +8,7 @@ ProteinReader::~ProteinReader()
 {
 }
 
-Data ProteinReader::GetData()
+Data* ProteinReader::GetData()
 {
-	return Data();
+	return new Data();
 }

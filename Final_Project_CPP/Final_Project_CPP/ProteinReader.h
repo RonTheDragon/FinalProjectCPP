@@ -9,6 +9,6 @@ public:
 
 	~ProteinReader();
 
-	Data GetData();
-}
+	Data* GetData();
+};
 

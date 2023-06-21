@@ -8,9 +8,9 @@ public:
 
 	~DataBase();
 
-	void AddData(Data);
+	void AddData(Data*);
 
-	std::vector<Data> GetData();
+	std::vector<Data*> GetData();
 
 
 	void ClearData();

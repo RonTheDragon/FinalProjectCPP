@@ -8,13 +8,13 @@ DataBase::~DataBase()
 {
 }
 
-void DataBase::AddData(Data)
+void DataBase::AddData(Data*)
 {
 }
 
-std::vector<Data> DataBase::GetData()
+std::vector<Data*> DataBase::GetData()
 {
-	return std::vector<Data>();
+	return std::vector<Data*>();
 }
 
 void DataBase::ClearData()

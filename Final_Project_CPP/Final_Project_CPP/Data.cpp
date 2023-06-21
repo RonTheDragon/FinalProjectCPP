@@ -9,10 +9,17 @@ Data::Data(float proteinAbsorb, float intakeReq, float time, float weight, int a
 {
 }
 
-
-
 Data::~Data()
 {
+}
+
+void Data::SetData(float proteinAbsorb, float intakeReq, float time, float weight, int activityLv)
+{
+	ProteinAbsorbed = proteinAbsorb;
+	ProteinIntakeReq = intakeReq;
+	IntakeTime = time;
+	Weight = weight;
+	ActivityLevel = activityLv;
 }
 
 void Data::SetProteinAbsorbed(float proteinAbsorb)
