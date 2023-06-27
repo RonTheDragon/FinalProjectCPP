@@ -79,12 +79,11 @@ std::vector<Data*> DataBase::GetData()
         int activityLv = 0;
         std::vector<Data*> dataEntries;
         Data* dataEntry = nullptr;
-        bool IsReading = false;
-        string Reading = "";
+
+        std::string trash = "";
 
         while (inputFile.get(c))
         {
-            //std::cout << c;
             // Process each character of the file here
             if (c == '{')
             {
@@ -104,7 +103,50 @@ std::vector<Data*> DataBase::GetData()
                 {
                     std::string key;
                     std::getline(inputFile, key, '\"');
-                    std::cout << key<< "\n";
+
+                    if (key == "Name")
+                    {
+                        std::getline(inputFile, trash, '\"');
+                        
+                        std::getline(inputFile, name, '\"');
+                        dataEntry->SetName(name);
+                       // std::cout << name;
+                    }
+                    else if (key == "ProteinAbsorbed")
+                    {
+                        std::getline(inputFile, trash, ':');
+                        inputFile >> proteinAbsorb;
+                        dataEntry->SetProteinAbsorbed(proteinAbsorb);
+                       // std::cout << proteinAbsorb;
+                    }
+                    else if (key == "ProteinIntakeReq")
+                    {
+                        std::getline(inputFile, trash, ':');
+                        inputFile >> intakeReq;
+                        dataEntry->SetProteinIntakeReq(intakeReq);
+                       // std::cout << intakeReq;
+                    }
+                    else if (key == "IntakeTime")
+                    {
+                        std::getline(inputFile, trash, '\"');
+                        std::getline(inputFile, time, '\"');
+                        dataEntry->SetIntakeTime(time);
+                       // std::cout << time;
+                    }
+                    else if (key == "Weight")
+                    {
+                        std::getline(inputFile, trash, ':');
+                        inputFile >> weight;
+                        dataEntry->SetWeight(weight);
+                       // std::cout << weight;
+                    }
+                    else if (key == "ActivityLevel")
+                    {
+                        std::getline(inputFile, trash, ':');
+                        inputFile >> activityLv;
+                        dataEntry->SetActivityLevel(activityLv);
+                       // std::cout << activityLv;
+                    }
                 }
             }
         }

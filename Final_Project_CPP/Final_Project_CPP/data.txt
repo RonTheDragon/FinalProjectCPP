@@ -1,19 +1,19 @@
 [
 	{
 		"Name": "Ron",
-		"ProteinAbsorbed": 93.4708,
-		"ProteinIntakeReq": 0.83834,
-		"IntakeTime": "21:21",
-		"Weight": 59.968,
-		"ActivityLevel": 2
+		"ProteinAbsorbed": 75.2864,
+		"ProteinIntakeReq": 0.950742,
+		"IntakeTime": "20:12",
+		"Weight": 95.2207,
+		"ActivityLevel": 1
 	}
 ,
 	{
 		"Name": "Yossi",
-		"ProteinAbsorbed": 52.1246,
-		"ProteinIntakeReq": 0.995167,
-		"IntakeTime": "09:16",
-		"Weight": 84.4941,
-		"ActivityLevel": 2
+		"ProteinAbsorbed": 147.141,
+		"ProteinIntakeReq": 1.14682,
+		"IntakeTime": "05:59",
+		"Weight": 51.2686,
+		"ActivityLevel": 3
 	}
 ]
