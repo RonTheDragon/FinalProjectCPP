@@ -1,0 +1,19 @@
+[
+	{
+		"Name": "Ron",
+		"ProteinAbsorbed": 93.4708,
+		"ProteinIntakeReq": 0.83834,
+		"IntakeTime": "21:21",
+		"Weight": 59.968,
+		"ActivityLevel": 2
+	}
+,
+	{
+		"Name": "Yossi",
+		"ProteinAbsorbed": 52.1246,
+		"ProteinIntakeReq": 0.995167,
+		"IntakeTime": "09:16",
+		"Weight": 84.4941,
+		"ActivityLevel": 2
+	}
+]

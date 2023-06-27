@@ -1,6 +1,8 @@
 #pragma once
-#include <random>
 #include "Data.h"
+#include <random>
+#include <sstream>
+#include <iomanip>
 class ProteinReader
 {
 public:
@@ -9,6 +11,9 @@ public:
 
 	~ProteinReader();
 
-	Data* GetData();
+	Data* GetData(string name);
+
+private:
+	string GenerateRandomTime(mt19937& gen);
 };
 

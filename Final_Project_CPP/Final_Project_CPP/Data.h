@@ -1,31 +1,38 @@
 #pragma once
+#include <string>
+using namespace std;
+
 class Data
 {
 public:
 	Data();
 
-	Data(float proteinAbsorb, float intakeReq, float time, float weight, int activityLv);
+	Data(string name,float proteinAbsorb, float intakeReq, string time, float weight, int activityLv);
 
 	~Data();
 
-	void  SetData(float proteinAbsorb, float intakeReq, float time, float weight, int activityLv);
+	void  SetData(string name, float proteinAbsorb, float intakeReq, string time, float weight, int activityLv);
 
-	void  SetProteinAbsorbed(float proteinAbsorb);
-	float GetProteinAbsorbed();
-	void  SetProteinIntakeReq(float intakeReq);
-	float GetProteinIntakeReq();
-	void  SetIntakeTime(float time);
-	float GetIntakeTime();
-	void  SetWeight(float weight);
-	float GetWeight();
-	void  SetActivityLevel(int activityLv);
-	int   GetActivityLevel();
+	void   SetName(string name);
+	string GetName();
+	void   SetProteinAbsorbed(float proteinAbsorb);
+	float  GetProteinAbsorbed();
+	void   SetProteinIntakeReq(float intakeReq);
+	float  GetProteinIntakeReq();
+	void   SetIntakeTime(string time);
+	string GetIntakeTime();
+	void   SetWeight(float weight);
+	float  GetWeight();
+	void   SetActivityLevel(int activityLv);
+	int    GetActivityLevel();
 
 private:
-	float ProteinAbsorbed;
-	float ProteinIntakeReq;
-	float IntakeTime;
-	float Weight;
-	int   ActivityLevel;
+	
+	string Name;
+	float  ProteinAbsorbed;
+	float  ProteinIntakeReq;
+	string  IntakeTime;
+	float  Weight;
+	int    ActivityLevel;
 };
 
