@@ -1,14 +1,6 @@
 #include "Dashboard.h"
 
-Dashboard::Dashboard()
-{
-}
-
-Dashboard::~Dashboard()
-{
-}
-
-void Dashboard::DisplayData(const std::vector<Data*>& data)
+void DisplayData(const std::vector<Data*>& data)
 {
     for (Data* item : data)
     {

@@ -1,19 +1,14 @@
 #pragma once
 #include <vector>
 #include "Data.h"
+
 class DataBase
 {
 public:
-	DataBase();
+	DataBase() = default;
+	~DataBase() = default;
 
-	~DataBase();
-
-	void AddData(Data*);
-
+	void               AddData(Data*);
 	std::vector<Data*> GetData();
-
-
-	void ClearData();
-
+	void               ClearData();
 };
-

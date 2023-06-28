@@ -4,16 +4,12 @@ Data::Data() : Name(""), ProteinAbsorbed(0), ProteinIntakeReq(0), IntakeTime("00
 {
 }
 
-Data::Data(string name, float proteinAbsorb, float intakeReq, string time, float weight, int activityLv) :
+Data::Data(std::string name, float proteinAbsorb, float intakeReq, std::string time, float weight, int activityLv) :
 	Name(name), ProteinAbsorbed(proteinAbsorb), ProteinIntakeReq(intakeReq), IntakeTime(time), Weight(weight), ActivityLevel(activityLv)
 {
 }
 
-Data::~Data()
-{
-}
-
-void Data::SetData(string name, float proteinAbsorb, float intakeReq, string time, float weight, int activityLv)
+void Data::SetData(std::string name, float proteinAbsorb, float intakeReq, std::string time, float weight, int activityLv)
 {
 	Name = name;
 	ProteinAbsorbed = proteinAbsorb;
@@ -23,12 +19,12 @@ void Data::SetData(string name, float proteinAbsorb, float intakeReq, string tim
 	ActivityLevel = activityLv;
 }
 
-void Data::SetName(string name)
+void Data::SetName(std::string name)
 {
 	Name = name;
 }
 
-string Data::GetName()
+std::string Data::GetName()
 {
 	return Name;
 }
@@ -53,12 +49,12 @@ float Data::GetProteinIntakeReq()
 	return ProteinIntakeReq;
 }
 
-void Data::SetIntakeTime(string time)
+void Data::SetIntakeTime(std::string time)
 {
 	IntakeTime = time;
 }
 
-string Data::GetIntakeTime()
+std::string Data::GetIntakeTime()
 {
 	return IntakeTime;
 }

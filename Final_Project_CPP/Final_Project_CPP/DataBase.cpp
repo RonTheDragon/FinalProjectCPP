@@ -1,63 +1,53 @@
 #include "DataBase.h"
-#include <fstream>
-#include "Data.h"
+
 #include <iostream>
+#include <fstream>
 
-DataBase::DataBase()
-{
-}
-
-DataBase::~DataBase()
-{
-}
+#include "Data.h"
 
 void DataBase::AddData(Data* data)
 {
     // Open the file in append mode
-    std::ofstream outputFile("data.txt", std::ios_base::app);
-    if (outputFile.is_open())
-    {
-        // Check if the file is empty
-        outputFile.seekp(0, std::ios::end);
-        bool isEmpty = (outputFile.tellp() == 0);
+    std::fstream io_file("data.txt", std::ios::app);
 
+    if(io_file.is_open())
+    {
         // If the file is empty, add the opening square bracket
-        if (isEmpty)
+        if(io_file.peek() == EOF)
         {
-            outputFile << "[\n";
+            io_file << "[\n";
         }
         // If the file is not empty, remove the last character (closing square bracket)
         else
         {
-            outputFile.close();
-
             // Read the file content
-            std::ifstream inputFile("data.txt");
-            std::string fileContent((std::istreambuf_iterator<char>(inputFile)),
-                std::istreambuf_iterator<char>());
-            inputFile.close();
+            std::string file_content = "";
+            io_file >> file_content;
+            io_file.close();
 
             // Remove the last character (closing square bracket)
-            fileContent.pop_back();
+            file_content.pop_back();
 
-            // Reopen the file in write mode and overwrite the content
-            outputFile.open("data.txt", std::ios_base::out | std::ios_base::trunc);
-            outputFile << fileContent;
-            outputFile << ",\n";
+            // Append "," and new line
+            file_content.append(",\n");
+
+
+            // Truncate the file, and write new content
+            io_file.open("data.txt", std::ios_base::trunc | std::ios_base::out);
+            io_file << file_content;
         }
 
         // Write the new data entry
-        outputFile << "\t{\n";
-        outputFile << "\t\t\"Name\": \"" << data->GetName() << "\",\n";
-        outputFile << "\t\t\"ProteinAbsorbed\": " << data->GetProteinAbsorbed() << ",\n";
-        outputFile << "\t\t\"ProteinIntakeReq\": " << data->GetProteinIntakeReq() << ",\n";
-        outputFile << "\t\t\"IntakeTime\": \"" << data->GetIntakeTime() << "\",\n";
-        outputFile << "\t\t\"Weight\": " << data->GetWeight() << ",\n";
-        outputFile << "\t\t\"ActivityLevel\": " << data->GetActivityLevel() << "\n";
-        outputFile << "\t}\n";
-        outputFile << "]";
-
-        outputFile.close();
+        io_file << "\t{\n";
+        io_file << "\t\t\"Name\": \"" << data->GetName() << "\",\n";
+        io_file << "\t\t\"ProteinAbsorbed\": " << data->GetProteinAbsorbed() << ",\n";
+        io_file << "\t\t\"ProteinIntakeReq\": " << data->GetProteinIntakeReq() << ",\n";
+        io_file << "\t\t\"IntakeTime\": \"" << data->GetIntakeTime() << "\",\n";
+        io_file << "\t\t\"Weight\": " << data->GetWeight() << ",\n";
+        io_file << "\t\t\"ActivityLevel\": " << data->GetActivityLevel() << "\n";
+        io_file << "\t}\n";
+        io_file << "]";
+        io_file.close();
     }
     else
     {
@@ -94,6 +84,7 @@ std::vector<Data*> DataBase::GetData()
                 if (dataEntry != nullptr)
                 {
                     dataEntries.push_back(dataEntry);
+                    delete dataEntry;
                     dataEntry = nullptr;
                 }
             }
@@ -165,10 +156,10 @@ std::vector<Data*> DataBase::GetData()
 
 void DataBase::ClearData()
 {
-    std::ofstream outputFile("data.txt", std::ios::trunc);
-    if (outputFile.is_open())
+    std::ofstream o_file("data.txt", std::ios::trunc);
+    if (o_file.is_open())
     {
-        outputFile.close();
+        o_file.close();
     }
     else
     {

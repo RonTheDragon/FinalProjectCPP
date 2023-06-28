@@ -1,19 +1,18 @@
 #pragma once
-#include "Data.h"
+
 #include <random>
-#include <sstream>
-#include <iomanip>
+#include <string>
+
+#include "Data.h"
+
 class ProteinReader
 {
 public:
+	ProteinReader() = default;
+	~ProteinReader() = default;
 
-	ProteinReader();
-
-	~ProteinReader();
-
-	Data* GetData(string name);
+	Data* GetData(std::string name);
 
 private:
-	string GenerateRandomTime(mt19937& gen);
+	std::string GenerateRandomTime(std::mt19937& gen);
 };
-

@@ -8,12 +8,10 @@
 
 int main()
 {
-    Dashboard db;
-    ProteinReader pr;
-    DataBase dtb;
-    dtb.ClearData();
-    dtb.AddData(pr.GetData("Ron"));
-    dtb.AddData(pr.GetData("Yossi"));
-    db.DisplayData(dtb.GetData());
+    ProteinReader protein_reader;
+    DataBase database;
+    database.ClearData();
+    database.AddData(protein_reader.GetData("Ron"));
+    database.AddData(protein_reader.GetData("Yossi"));
+    DisplayData(database.GetData());
 }
-
