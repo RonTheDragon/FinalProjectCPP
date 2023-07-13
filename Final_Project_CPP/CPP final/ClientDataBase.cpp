@@ -73,7 +73,7 @@ void insert_client(std::string& out, const ClientData& client)
 void replace_file_content(const std::string& new_content, std::fstream& io_file)
 {
     /* Open the file in output mode and truncating it */
-    io_file.open("data.txt", std::ios::trunc | std::ios::out);
+    io_file.open("data.json", std::ios::trunc | std::ios::out);
     if(io_file.is_open())
     {
         /* Write the new content and close the file */
@@ -82,7 +82,7 @@ void replace_file_content(const std::string& new_content, std::fstream& io_file)
     }
     else
     {
-        std::cout << "Failed to open data.txt for new content" << std::endl;
+        std::cout << "Failed to open data.json for new content" << std::endl;
     }
 }
 
@@ -135,7 +135,7 @@ int extract_int(std::ifstream& i_file, std::string& line)
 
 void ClientDataBase::add_client(const ClientData& client)
 {
-    std::fstream io_file("data.txt", std::ios::in | std::ios::out);
+    std::fstream io_file("data.json", std::ios::in | std::ios::out);
     if(io_file.is_open())
     {
         if(file_is_empty(io_file))
@@ -158,13 +158,13 @@ void ClientDataBase::add_client(const ClientData& client)
     }
     else
     {
-        std::cout << "Failed to open data.txt for adding client" << std::endl;
+        std::cout << "Failed to open data.json for adding client" << std::endl;
     }
 }
 
 std::vector<ClientData> ClientDataBase::get_clients()
 {
-    std::ifstream i_file("data.txt", std::ios::in);
+    std::ifstream i_file("data.json", std::ios::in);
     std::vector<ClientData> clients;
     std::string line = "";
     if(i_file.is_open())
@@ -189,7 +189,7 @@ std::vector<ClientData> ClientDataBase::get_clients()
     }
     else
     {
-        std::cout << "Failed to open data.txt for reading clients" << std::endl;
+        std::cout << "Failed to open data.json for reading clients" << std::endl;
     }
 
     return clients;
